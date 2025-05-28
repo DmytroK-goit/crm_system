@@ -1,14 +1,10 @@
-import StatusLabel, { Status } from '@/app/components/status-lable';
+import AddCompanyButton from '@/app/components/add-company-button';
 
 export default function Home() {
   return (
     <main>
-      <h1 className="text-7xl">Home Page</h1>
-      <StatusLabel status={Status.Active}>Active</StatusLabel>
-
-      <StatusLabel status={Status.Pending}>Pending</StatusLabel>
-      <StatusLabel status={Status.NotActive}>Not-Active</StatusLabel>
-      <StatusLabel status={Status.Suspended}>Suspended</StatusLabel>
+      <h1 className="text-xl">Home page</h1>
+      <AddCompanyButton />
     </main>
   );
 }
