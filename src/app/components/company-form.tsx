@@ -36,7 +36,7 @@ export interface CompanyFormProps {
   onSubmit?: (values: CompanyFieldValues) => void | Promise<void>;
 }
 
-export default function CompanyForm({ onSubmit }: CompanyFormProps) {
+export function CompanyForm({ onSubmit }: CompanyFormProps) {
   const queryClient = useQueryClient();
 
   const { data: categories } = useQuery({
@@ -61,6 +61,7 @@ export default function CompanyForm({ onSubmit }: CompanyFormProps) {
   });
 
   const handleSubmit = async (values: CompanyFieldValues) => {
+    if (!categories || !countries) return;
     await mutateAsync({
       ...values,
       categoryTitle:
